@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="display:flexbox;" class="text-center">
+    <!-- {% if user.is_authenticated %} -->
+        {% if user_type == 'student' %}
+                {% include 'profile/profile_student.html' %}            
+        {% else %}
+            {% include 'profile/profile_teacher.html' %}
+        {% endif %}
+
+    <!-- {% endif %} -->
+</div>
+{% endblock %}

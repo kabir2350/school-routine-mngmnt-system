@@ -1,0 +1,30 @@
+
+            {% if profile.profilename %}
+            profilename : {{ profile.profilename }} <br>
+            {% endif %}
+            {% if profile.teacher.first_name %}
+            First Name : {{ profile.teacher.first_name }} <br>
+            {% endif %}
+            {% if profile.teacher.last_name %}
+            Last Name : {{ profile.teacher.last_name }} <br>
+            {% endif %}
+            {% if profile.teacher.teacher_roll %}
+            teacher Roll : {{ profile.teacher.teacher_roll }} <br>
+            {% endif %}
+            {% if profile.email %}
+            email : {{ profile.email }} <br>
+            {% endif %}
+            
+        <ol>    
+        
+                {% for course in profile.teacher.courses.all %}
+                    <li>{{ course.title }}</li>
+                {% endfor %}
+    
+    
+    </ol>
+    <div>
+        
+        <a href="{% url 'update' %}">Update?</a>
+    </div>
+    <br>
